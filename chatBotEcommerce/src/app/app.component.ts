@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'chatBotEcommerce';
+  colorBackRight: string = '#007bff';
+  colorFontRight: string = '#ffffff';
+  message =[];
 }
