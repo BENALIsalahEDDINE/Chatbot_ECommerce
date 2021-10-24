@@ -1,0 +1,20 @@
+.content-message {
+    width: 100%;
+}
+  
+.right-content {
+    text-align: right;
+    margin-left: 10px;
+}
+
+.left-content {
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+p {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+}
