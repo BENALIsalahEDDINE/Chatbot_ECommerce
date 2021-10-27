@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-
+//ss
   BACK_ENABLED: boolean = true;
   @Input('messages') messages: Message[];
   @Input('colorBackRight') colorBackRight: string;
