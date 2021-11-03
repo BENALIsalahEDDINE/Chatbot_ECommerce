@@ -1,9 +1,9 @@
-<div *ngIf="owner" class="content-message right-content">
+<div *ngIf="!owner" class="content-message right-content">
     <p [ngStyle]="{'background-color': colorBackRight, 'color': colorFontRight}">
         {{text}}<strong style="font-size: x-small;position: absolute;color:aliceblue;margin-left: -38px;margin-top: 30px;">{{today | date:'h:mm a'}}</strong>
     </p>
 </div>
-<div *ngIf="!owner" class="content-message left-content">
+<div *ngIf="owner" class="content-message left-content">
     <p [ngStyle]="{'background-color': colorBackLeft, 'color': colorFontLeft}" >
         {{text}} <strong style="font-size: x-small;position: absolute;color:aliceblue;margin-left: 8px;margin-top: 20px;">{{today | date:'h:mm a'}}</strong></p>
 </div>
