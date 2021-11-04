@@ -33,14 +33,13 @@ export class ChatComponent implements OnInit {
     this.messages.push(newMessage);
 
     let messageBack: TextMessage = { "firstname": environment.firstName, "text": this.textInput}
-   
     if(this.BACK_ENABLED){
-      
-      this.chatService.getRebotResponse(messageBack).subscribe((messageReturn : any)=>{
-        let reply: Message = { text: messageReturn.text, date: "", userOwner: false};
-        this.messages.push(reply);
-        console.log(reply) ;
-      }) ;
+      this.chatService.sendMessage(messageBack)
+      .subscribe((res: ResponseMessage) => {
+        let messageReturn: Message = { text: res.responseMessage, date: new Date().toDateString(), userOwner: false}
+        this.messages.push(messageReturn);
+
+      });
     }
     this.textInput = '';
   }
