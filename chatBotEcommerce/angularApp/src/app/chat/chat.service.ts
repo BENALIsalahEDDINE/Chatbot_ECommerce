@@ -37,12 +37,12 @@ getRebotResponse(textMessage: TextMessage): Observable<TextMessage> {
     );
 }
  
-  /*sendMessage(textMessage: TextMessage){
+  sendMessage(textMessage: TextMessage){
     var reqBody = {
       "projectId": environment.dialogflow.projectId,
       "requestText": textMessage.text
     }
    
     return this.http.post(environment.backend.requestTextUrl, reqBody, this.httpOptions);
-  }*/
+  }
 }
