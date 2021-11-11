@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     ChatComponent,
     MessageComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
