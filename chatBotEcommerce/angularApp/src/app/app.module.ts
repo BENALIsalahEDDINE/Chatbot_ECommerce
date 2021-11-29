@@ -9,13 +9,15 @@ import { ChatComponent } from './chat/chat.component';
 import { ChatService } from './chat/chat.service';
 import { MessageComponent } from './message/message.component';
 import { CommonModule } from '@angular/common';
+import { PageIndexComponent } from './page-index/page-index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
-    MessageComponent
-  ],
+    MessageComponent,
+    PageIndexComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

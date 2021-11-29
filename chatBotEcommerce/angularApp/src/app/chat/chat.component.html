@@ -1,12 +1,56 @@
-
-<div class="list-messages">
-  <div *ngFor="let message of messages" class="message-container">
-    <app-message class="message" [text]="message.text" [date]="message.date" [colorBackRight]="colorBackRight" [colorFontRight]="colorFontRight"
-    [colorBackLeft]="colorBackLeft" [colorFontLeft]="colorFontLeft" [owner]="!message.userOwner"
-    [ngClass]="{'left-message': !message.userOwner, 'right-message': message.userOwner}"></app-message>
+<div class="chatbox-holder">
+  <div class="chatbox group-chat">
+    <div class="chatbox-top">
+   
+      
+      <div class="chat-group-name">
+        <span class="status away"></span>
+        Chatbot 
+      </div>
+      <div class="chatbox-icons">
+        <label for="chkSettings"><i class="fa fa-gear"></i></label><input type="checkbox" id="chkSettings" />
+        <div class="settings-popup">
+          <ul>
+            <li><a href="#">Group members</a></li>
+            <li><a href="#">Add members</a></li>
+            <li><a href="#">Delete members</a></li>
+            <li><a href="#">Leave group</a></li>
+          </ul>
+        </div>
+        <a href="javascript:void(0);"><i class="fa fa-minus"></i></a>
+        <a href="javascript:void(0);"><i class="fa fa-close"></i></a>       
+      </div>      
+    </div>
+    
+    <div class="chat-messages" >
+      <div class="message-box-holder" *ngFor ="let message of messages">
+      
+          <div class="message-box" *ngIf="message.userOwner">
+            {{message.text}}
+          </div>
+          <div class="message-sender" *ngIf="!message.userOwner">
+            
+            <div class="message-box message-partner">
+              {{message.text}}
+             </div>
+            </div>
+      </div>
+    </div>
+    
+    <div class="chat-input-holder">
+      <textarea class="chat-input"  [(ngModel)]="textInput"></textarea>
+      <input type="button" value="Send" class="message-send" (click)="sendMessage()" />
+    </div>
+    <div class="attachment-panel">
+      <a href="#" class="fa fa-thumbs-up"></a>
+      <a href="#" class="fa fa-camera"></a>
+      <a href="#" class="fa fa-video-camera"></a>
+      <a href="#" class="fa fa-image"></a>
+      <a href="#" class="fa fa-paperclip"></a>
+      <a href="#" class="fa fa-link"></a>
+      <a href="#" class="fa fa-trash-o"></a>
+      <a href="#" class="fa fa-search"></a>
+    </div>
   </div>
-</div>
-<div class="input-message form-group">
-  <textarea class="input-text-message form-input form-fix " [(ngModel)]="textInput" placeholder="Type text here" (keyup)="onKey($event)"></textarea>
-  <i class="fa fa-paper-plane fa-2x input-send" aria-hidden="false" (click)="sendMessage()"></i>
+  
 </div>

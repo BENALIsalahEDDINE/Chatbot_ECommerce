@@ -23,8 +23,6 @@ export class ChatComponent implements OnInit {
   constructor(private chatService: ChatService) {}
 
   ngOnInit() {
-
-
   }
 
   sendMessage(){
@@ -43,6 +41,7 @@ export class ChatComponent implements OnInit {
       }) ;
     }
     this.textInput = '';
+    console.log(this.messages)
   }
 
   onKey(event: any){
